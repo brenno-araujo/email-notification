@@ -32,7 +32,7 @@ class UserNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -45,7 +45,7 @@ class UserNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Esta é a confirmação de cadastro de usuário.')
-                    ->greeting('Olá'.$this->user->name)
+                    ->greeting('Olá, '.$this->user->name)
                     ->action('Clique aqui para confirmar o seu cadastro', url('/'))
                     ->line('Se você não solicitou este cadastro, nenhuma ação é necessária.');
     }
@@ -59,7 +59,8 @@ class UserNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'user' => $this->user,
+            'message' => 'Esta é a confirmação de cadastro de usuário.',
         ];
     }
 }
