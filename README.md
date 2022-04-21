@@ -1,12 +1,12 @@
-# Email Notification
+# Laravel Notification
 
 <h4 align="center"> 
-	✔  MailNotification 🚀  ✔
+	✔  LaraNotification 🚀  ✔
 </h4>
 
 ## 🗺 About the project
 
-Project created using Laravel and Vue js as main technologies for sending email
+Project created using Laravel and Vue js as main technologies for sending email notifications, via database and via broadcast
 
 ## 🚀 Technologies used
 
